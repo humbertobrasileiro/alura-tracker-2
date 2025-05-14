@@ -11,7 +11,7 @@
     <nav class="panel mt-5">
       <ul>
         <li>
-          <router-link to="/" class="link">
+          <router-link to="/tarefas" class="link">
             <i class="fas fa-tasks"></i>
             tarefas
           </router-link>

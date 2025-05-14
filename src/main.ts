@@ -3,9 +3,13 @@ import App from './App.vue'
 
 import '@fortawesome/fontawesome-free/css/all.css'
 import roteador from './roteador'
-import { key, store } from './store'
+import { keyProjeto, storeProjeto } from './store/projeto-store'
+import { keyTarefa, storeTarefa } from './store/tarefa-store'
+import { keyNotificacao, storeNotificacao } from './store/notificacoes-store'
 
 createApp(App)
   .use(roteador)
-  .use(store, key)
+  .use(storeProjeto, keyProjeto)
+  .use(storeTarefa, keyTarefa)
+  .use(storeNotificacao, keyNotificacao)
   .mount('#app')

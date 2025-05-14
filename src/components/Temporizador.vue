@@ -30,7 +30,7 @@ export default defineComponent({
     return {
       tempoEmSegundos: 0,
       cronometroRodando: false,
-      cronometro: 0
+      cronometro: null as ReturnType<typeof setInterval> | null
     }
   },
   methods: {
@@ -46,7 +46,10 @@ export default defineComponent({
       this.$emit('aoFinalizarTarefa', this.tempoEmSegundos)
       this.tempoEmSegundos = 0
       this.cronometroRodando = false
-      clearInterval(this.cronometro)
+      if (this.cronometro) {
+        clearInterval(this.cronometro);
+        this.cronometro = null;
+      }
     }
   }
 });
